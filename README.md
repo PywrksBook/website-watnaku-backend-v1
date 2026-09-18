@@ -1,6 +1,6 @@
 # Watnaku Temple Management API
 
-Backend API สำหระบริหารจัดการข้อมูลวัดนาคู พัฒนาโดยใช้ **Node.js + Express + MySQL**
+Backend API สำหรับบริหารจัดการข้อมูลวัดนาคู พัฒนาโดยใช้ **Node.js + Express + MySQL**
 ระบบเป็น REST API ที่รองรับการจัดการข้อมูลวัด พระสงฆ์ กิจกรรม ข่าวสาร และแกลเลอรี่รูปภาพ พร้อมระบบยืนยันตัวตน (JWT) และอัปโหลดรูป
 
 ---
@@ -17,7 +17,7 @@ Backend API สำหระบริหารจัดการข้อมู�
 | File Upload | multer (รองรับรูปสูงสุด 5 MB) |
 | Env | dotenv |
 | Dev Tool | nodemon |
-| อื่นๆ | cors, express.static (สำหระ /uploads และ /public) |
+| อื่นๆ | cors, express.static (สำหรับ /uploads และ /public) |
 
 ---
 
@@ -42,7 +42,6 @@ website-watnaku-v1/
 │   ├── routes/                # 6 route files (แยกตามหมวด)
 │   └── server.js              # entry point — ตั้งค่า Express, routes, error handlers
 ├── uploads/                   # เก็บไฟล์รูปที่อัปโหลด (เปล่า, .gitkeep เท่า)
-├── public/                    # สำหรับ frontend 
 ├── schema.sql                 # โครงสร้างฐานข้อมูล + seed data (ไม่มีรหัสผ่าน default)
 ├── .env.example               # ตัวอย่าง environment variables
 ├── .gitignore
@@ -93,7 +92,7 @@ website-watnaku-v1/
    UPLOAD_DIR=uploads
    MAX_FILE_SIZE=5242880
    ```
-> ⚠️ **ไม่ควร commit ไฟล์ `.env`** — มีข้อมูลลับอยู่ เชคชั่น `JWT_SECRET`
+> ⚠️ **ไม่ควร commit ไฟล์ `.env`** — มีข้อมูลลับอยู่ ตรวจสอบให้แน่ใจว่า `JWT_SECRET` เป็นค่าที่ปลอดภัย
 
 ### ตั้งค่าฐานข้อมูล (Create Database)
 
@@ -118,7 +117,7 @@ node -e "console.log(require('bcrypt').hashSync('รหัสผ่านที�
 
 ตัวอย่าง:
 ```bash
-node -e "console.log(require('bcrypt').hashSync('admin1234', 10))"
+node -e "console.log(require('bcrypt').hashSync('your-password', 10))"
 ```
 คัดลอกค่าที่ได้ (ข้อความยาว เช่น `$2b$10$RpMO...` — ขึ้นอยู่กับรหัสผ่าน)
 
@@ -141,7 +140,7 @@ npm run dev     # ปกติ (รีสตาร์ตอัตโนมัต
 # หรือ
 npm start       # รันจริง (ไม่รีสตาร์ต)
 ```
- Startsever สำเร็จ
+Start server สำเร็จ
 🚀 Watnaku Temple Management API
 📡 Server running on: http://localhost:3000
 📊 Health check: http://localhost:3000/api/v1/health
@@ -286,7 +285,7 @@ curl -X POST http://localhost:3000/api/v1/gallery \
 
 ##  License
 
-โครงการนี้เป็นส่วนหนึ่งของฝึกฝนส่วนบุคคล — ใช้งานได้อย่างอิสระสำหรับการพัฒนาหรือศึกษา
+โครงการนี้เป็นส่วนหนึ่งของการฝึกฝนส่วนบุคคล — License: Not specified
 
 ---
 
