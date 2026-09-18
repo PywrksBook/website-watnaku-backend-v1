@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Environment (do not commit real secrets)
+.env
+.env.*
+!.env.example
+
+# Uploaded files (never commit actual uploads)
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Cache / Build
+.cache/
+coverage/
+dist/
+build/
+*.tgz
